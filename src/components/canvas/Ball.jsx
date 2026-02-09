@@ -21,7 +21,7 @@ const Ball = (props) => {
             <mesh castShadow receiveShadow scale={2.75}>
                 <icosahedronGeometry args={[1, 1]} />
                 <meshStandardMaterial
-                    color='#fff8eb'
+                    color={props.theme === 'dark' ? '#fff8eb' : '#e5e5e5'}
                     polygonOffset
                     polygonOffsetFactor={-5}
                     flatShading
@@ -38,7 +38,7 @@ const Ball = (props) => {
     );
 };
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon, theme }) => {
     return (
         <Canvas
             frameloop='demand'
@@ -47,7 +47,7 @@ const BallCanvas = ({ icon }) => {
         >
             <Suspense fallback={<CanvasLoader />}>
                 <OrbitControls enableZoom={false} />
-                <Ball imgUrl={icon} />
+                <Ball imgUrl={icon} theme={theme} />
             </Suspense>
 
             <Preload all />

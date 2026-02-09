@@ -6,7 +6,7 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
     const [active, setActive] = useState("");
     const [toggle, setToggle] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -41,20 +41,24 @@ const Navbar = () => {
                         window.scrollTo(0, 0);
                     }}
                 >
+                    {/* Logo could change based on theme if needed, or keep as is */}
                     <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-                    <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+                    <p className='text-black dark:text-white text-[18px] font-bold cursor-pointer flex '>
                         Shailendra &nbsp;
                         <span className='sm:block hidden'> | Portfolio</span>
                     </p>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <ul className='list-none hidden sm:flex flex-row gap-10'>
+                <ul className='list-none hidden sm:flex flex-row gap-10 items-center'>
+                    <li className='cursor-pointer text-[24px]' onClick={toggleTheme}>
+                        {theme === 'dark' ? '☀️' : '🌙'}
+                    </li>
                     {navLinks.map((nav) => (
                         <li
                             key={nav.id}
-                            className={`${active === nav.title ? "text-white" : "text-secondary"
-                                } hover:text-white text-[18px] font-medium cursor-pointer`}
+                            className={`${active === nav.title ? "text-black dark:text-white" : "text-secondary"
+                                } hover:text-black dark:hover:text-white text-[18px] font-medium cursor-pointer`}
                             onClick={() => setActive(nav.title)}
                         >
                             <a href={`#${nav.id}`}>{nav.title}</a>
@@ -63,7 +67,10 @@ const Navbar = () => {
                 </ul>
 
                 {/* Mobile Navigation */}
-                <div className='sm:hidden flex flex-1 justify-end items-center'>
+                <div className='sm:hidden flex flex-1 justify-end items-center gap-4'>
+                    <div className='cursor-pointer text-[24px]' onClick={toggleTheme}>
+                        {theme === 'dark' ? '☀️' : '🌙'}
+                    </div>
                     <img
                         src={toggle ? close : menu}
                         alt='menu'
