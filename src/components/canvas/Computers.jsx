@@ -1,15 +1,13 @@
 
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import { OrbitControls, Preload, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 import CanvasLoader from "./CanvasLoader";
 
 const Computers = ({ isMobile }) => {
-    // Using a sphere with distort material as a fallback/stylistic choice
-    // instead of a heavy GLTF model to ensure it works out of the box.
     return (
-        <mesh>
+        <group>
             <ambientLight intensity={0.5} />
             <directionalLight position={[-2, 5, 2]} intensity={1} />
             <Sphere args={[1, 100, 200]} scale={2.5}>
@@ -20,7 +18,7 @@ const Computers = ({ isMobile }) => {
                     speed={2}
                 />
             </Sphere>
-        </mesh>
+        </group>
     );
 };
 
