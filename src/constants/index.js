@@ -17,19 +17,19 @@ export const navLinks = [
 const services = [
     {
         title: "Web Developer",
-        icon: "https://via.placeholder.com/150",
+        icon: "https://placehold.co/150",
     },
     {
         title: "React Native Developer",
-        icon: "https://via.placeholder.com/150",
+        icon: "https://placehold.co/150",
     },
     {
         title: "Backend Developer",
-        icon: "https://via.placeholder.com/150",
+        icon: "https://placehold.co/150",
     },
     {
         title: "Content Creator",
-        icon: "https://via.placeholder.com/150",
+        icon: "https://placehold.co/150",
     },
 ];
 
@@ -92,7 +92,7 @@ const experiences = [
     {
         title: "Software Developer Intern",
         company_name: "Trynocode Technology Pvt Ltd",
-        icon: "https://via.placeholder.com/150",
+        icon: "https://placehold.co/150",
         iconBg: "#383E56",
         date: "Aug 2025 - Present",
         points: [
@@ -105,7 +105,7 @@ const experiences = [
     {
         title: "Freelance Python Developer",
         company_name: "AfterQuery Experts",
-        icon: "https://via.placeholder.com/150",
+        icon: "https://placehold.co/150",
         iconBg: "#E6DEDD",
         date: "Jan 2025 - Present",
         points: [
@@ -163,7 +163,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: "https://via.placeholder.com/300x200",
+        image: "https://placehold.co/300x200",
         source_code_link: "https://github.com/",
     },
     {
@@ -184,7 +184,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: "https://via.placeholder.com/300x200",
+        image: "https://placehold.co/300x200",
         source_code_link: "https://github.com/",
     },
 ];
